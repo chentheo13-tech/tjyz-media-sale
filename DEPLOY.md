@@ -2,6 +2,10 @@
 
 网站是纯静态单页应用（Vite 构建产物在 `dist/`），无需服务器。
 已支持两种免费托管：**Cloudflare Pages** 与 **GitHub Pages**。
+
+> 已上线：
+> - GitHub Pages：https://chentheo13-tech.github.io/tjyz-media-sale/
+> - Cloudflare Pages：https://main.scmc-charity-sale.pages.dev
 全站资源路径已做根路径兼容（相对路径 + BASE_URL），两种平台都不会出现图片 404。
 
 ## 🚀 一键脚本（最省事）

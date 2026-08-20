@@ -54,12 +54,13 @@ git branch -M main
 
 # ---------- 5. 建仓库 / 推送 ----------
 echo "[4/6] 创建/推送仓库 ..."
+git remote remove origin 2>/dev/null
 if "$GH" repo view "$USER/$REPO" >/dev/null 2>&1; then
-  git remote remove origin 2>/dev/null
   git remote add origin "https://github.com/$USER/$REPO.git"
   git push -u origin main || { echo "❌ 推送失败"; read -n1 -p "按回车关闭窗口"; exit 1; }
 else
-  "$GH" repo create "$REPO" --public --source=. --push || { echo "❌ 创建仓库失败（名称可能已被占用）"; read -n1 -p "按回车关闭窗口"; exit 1; }
+  git remote add origin "https://github.com/$USER/$REPO.git" 2>/dev/null
+  "$GH" repo create "$REPO" --public --source=. --push || { echo "❌ 创建仓库失败（名称可能已被占用，换个名字重试）"; read -n1 -p "按回车关闭窗口"; exit 1; }
 fi
 
 # ---------- 6. 开启 Pages + 触发部署 ----------

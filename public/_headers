@@ -1,0 +1,6 @@
+# 静态资源缓存策略（index.html 不做长缓存，保证更新即时生效）
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800

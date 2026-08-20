@@ -1,0 +1,4 @@
+# Cloudflare Pages 配置
+name = "scmc-charity-sale"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-08-20"

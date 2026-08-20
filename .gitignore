@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.dsh-vision-router/
+.wrangler/
+.tools/
+
+# 大体积原始素材不提交到 GitHub（本机已存档）
+assets-original/
+素材/
